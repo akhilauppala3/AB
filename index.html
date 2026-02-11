@@ -15,7 +15,7 @@ body {
   font-family: 'Poppins', sans-serif;
   text-align: center;
   color: #fff;
-  background: linear-gradient(160deg, #0b1b34, #1b2b4f, #2c3e6b); /* deep night blue */
+  background: linear-gradient(160deg, #0b1b34, #1b2b4f, #2c3e6b);
   overflow-x: hidden;
   position: relative;
 }
@@ -40,7 +40,7 @@ h1 {
   font-family: 'Playfair Display', serif;
   font-size: 2.2rem;
   margin-top: 30px;
-  color: #ffdd88; /* golden yellow for standout */
+  color: #ffdd88; /* golden yellow */
   letter-spacing: 1px;
   text-shadow: 0 0 12px #ffd699, 0 0 24px #ffcc88;
 }
@@ -69,23 +69,23 @@ h1 {
   transform: scale(1.05);
 }
 
-/* Paragraphs - bigger, glowing */
+/* Paragraphs - bigger and bright without highlights */
 p {
   max-width: 750px;
   margin: 25px auto;
   font-size: 1.5rem;
   line-height: 2;
-  color: #fffa9b;
-  text-shadow: 0 0 8px #fffaa3, 0 0 15px #ffeb7d;
+  color: #fff8c6; /* uniform bright color */
+  text-shadow: 0 0 8px #fff8c6, 0 0 15px #ffeb7d;
   position: relative;
   animation: glow 3s ease-in-out infinite alternate;
 }
 
-/* Subtle glow on bold text */
-p b {
-  color: #fff8c6;
-  text-shadow: 0 0 6px #fff8c6, 0 0 12px #ffec88;
-  font-weight: 600;
+/* Paragraph glow animation */
+@keyframes glow {
+  0% { text-shadow: 0 0 6px #fff8c6, 0 0 12px #ffeb7d; }
+  50% { text-shadow: 0 0 14px #fff8c6, 0 0 28px #ffeb7d; }
+  100% { text-shadow: 0 0 6px #fff8c6, 0 0 12px #ffeb7d; }
 }
 
 /* Cute stickers/emojis in paragraphs */
@@ -137,13 +137,6 @@ button {
   font-weight: 500;
 }
 
-/* Paragraph glow animation */
-@keyframes glow {
-  0% { text-shadow: 0 0 6px #fffaa3, 0 0 12px #ffeb7d; }
-  50% { text-shadow: 0 0 14px #fffaa3, 0 0 28px #ffeb7d; }
-  100% { text-shadow: 0 0 6px #fffaa3, 0 0 12px #ffeb7d; }
-}
-
 /* Full screen content */
 html, body {
   height: 100%;
@@ -163,10 +156,10 @@ html, body {
 
 <!-- Paragraphs with stickers -->
 <p>From childhood memories… 👶 to becoming husband & wife… 💍 Our story was written by destiny. <span class="sticker">💖</span></p>
-<p>This is our <b>first Valentine’s Day after marriage</b>, and I wanted to do something special just for you. <span class="sticker">🌹</span></p>
-<p>We’ve known each other since childhood… grew up as <b>bava & maradalu</b>, and destiny decided, <b>“These two belong together.”</b> <span class="sticker">✨</span></p>
+<p>This is our first Valentine’s Day after marriage, and I wanted to do something special just for you. <span class="sticker">🌹</span></p>
+<p>We’ve known each other since childhood… grew up as bava & maradalu, and destiny decided, “These two belong together.” <span class="sticker">✨</span></p>
 <p>Yes, we fight. Yes, we get angry. Yes, we hurt each other sometimes. <span class="sticker">💌</span></p>
-<p>But even after all that, <b>I still choose you. Every single day.</b> <span class="sticker">❤️</span></p>
+<p>But even after all that, I still choose you. Every single day. <span class="sticker">❤️</span></p>
 <p>You are my comfort, my safe place, my forever person. ❤️ I LOVE YOU ❤️ <span class="sticker">💫</span></p>
 
 <!-- Buttons -->
