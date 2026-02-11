@@ -5,22 +5,21 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Our First Valentine ❤️</title>
 <style>
-  /* Body and background */
   body {
     margin: 0;
     font-family: 'Segoe UI', sans-serif;
-    background: linear-gradient(to bottom, #fce1f5, #ffe6f0);
-    color: #ff4da6;
+    background: linear-gradient(135deg, #ffd3e2, #ffe6f0, #ffebf5);
+    color: #ff3366;
     text-align: center;
-    overflow-x: hidden;
     padding: 30px;
+    overflow-x: hidden;
   }
 
   h1 {
     margin-top: 20px;
-    font-size: 2.5em;
-    color: #ff4da6;
-    text-shadow: 1px 1px 5px pink;
+    font-size: 2.8em;
+    color: #ff1f91;
+    text-shadow: 1px 1px 8px #ffb6ff;
   }
 
   .container {
@@ -30,18 +29,18 @@
   }
 
   .card {
-    background: rgba(255,255,255,0.2);
-    backdrop-filter: blur(10px);
+    background: rgba(255,255,255,0.3);
+    backdrop-filter: blur(15px);
     padding: 25px;
     border-radius: 25px;
     margin-top: 20px;
-    box-shadow: 0 0 30px rgba(255,105,180,0.5);
+    box-shadow: 0 0 40px rgba(255,105,180,0.4);
     transition: transform 0.5s ease, box-shadow 0.5s ease;
   }
 
   .card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 0 40px rgba(255,105,180,0.7);
+    box-shadow: 0 0 50px rgba(255,105,180,0.6);
   }
 
   p {
@@ -52,33 +51,9 @@
   h2 {
     margin: 20px 0;
     color: #ff1f91;
-    text-shadow: 1px 1px 5px pink;
+    text-shadow: 1px 1px 6px #ffb6ff;
   }
 
-  /* Slideshow styles */
-  .slideshow-container {
-    position: relative;
-    max-width: 100%;
-    margin: 20px auto;
-    border-radius: 25px;
-    overflow: hidden;
-    box-shadow: 0 0 30px rgba(255,105,180,0.5);
-  }
-
-  .slide {
-    display: none;
-    width: 100%;
-    border-radius: 25px;
-  }
-
-  .slide img {
-    width: 100%;
-    display: block;
-    border-radius: 25px;
-    transition: opacity 1s ease-in-out;
-  }
-
-  /* Buttons */
   button {
     padding: 12px 25px;
     margin: 10px;
@@ -86,37 +61,61 @@
     border-radius: 30px;
     font-size: 1em;
     cursor: pointer;
-    transition: 0.3s;
-  }
-
-  #yesBtn {
-    background: #ff4da6;
+    transition: all 0.3s ease;
+    background: linear-gradient(45deg, #ff4da6, #ff85c1);
     color: white;
   }
 
-  #noBtn {
-    background: #555;
-    color: white;
+  button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(255,77,166,0.7);
+  }
+
+  /* Slideshow */
+  .slideshow-container {
     position: relative;
+    max-width: 100%;
+    margin: 20px auto;
+    border-radius: 25px;
+    overflow: hidden;
+    box-shadow: 0 0 50px rgba(255,105,180,0.4);
   }
 
-  /* Subtle floating sparkle animation */
+  .slide {
+    display: none;
+    width: 100%;
+    height: 400px; /* fixed height for both images */
+    object-fit: cover; /* ensures both images fill the box proportionally */
+    border-radius: 25px;
+    transition: opacity 1s ease-in-out;
+  }
+
+  .slide img {
+    width: 100%;
+    height: 100%;
+    border-radius: 25px;
+    object-fit: cover;
+    display: block;
+    box-shadow: 0 0 30px rgba(255,105,180,0.3);
+  }
+
+  /* Subtle sparkle animation */
   .sparkle {
     position: absolute;
     font-size: 15px;
     color: #ffb6ff;
     animation: sparkleMove 4s linear infinite;
-    opacity: 0.6;
+    opacity: 0.5;
   }
 
   @keyframes sparkleMove {
-    0% { transform: translateY(0) scale(0.5); opacity:0.6;}
+    0% { transform: translateY(0) scale(0.5); opacity:0.5;}
     50% { transform: translateY(-50vh) scale(1); opacity:1;}
     100% { transform: translateY(-100vh) scale(0.5); opacity:0;}
   }
+
 </style>
 </head>
-
 <body>
 
 <h1>Happy First Valentine My Love ❤️</h1>
@@ -125,12 +124,8 @@
 
   <!-- Slideshow -->
   <div class="slideshow-container">
-    <div class="slide">
-      <img src="IMG_3043.jpeg" alt="Childhood Memory">
-    </div>
-    <div class="slide">
-      <img src="IMG_6203.jpeg" alt="Our Love">
-    </div>
+    <div class="slide"><img src="IMG_3043.jpeg" alt="Childhood Memory"></div>
+    <div class="slide"><img src="IMG_6203.jpeg" alt="Our Love"></div>
   </div>
 
   <div class="card">
@@ -169,11 +164,6 @@
       my forever person.
     </p>
 
-    <p>
-      I may not say it every day,  
-      but please know this:
-    </p>
-
     <h2>❤️ I LOVE YOU ❤️</h2>
 
     <p>
@@ -190,7 +180,6 @@
     <p id="message" style="display:none; margin-top:20px; font-size:1.2em; color:#ff4da6;">
       Forever yours… My Bava 💖🌙
     </p>
-
   </div>
 
 </div>
@@ -202,14 +191,12 @@
 </audio>
 
 <script>
-// Mobile/desktop-friendly autoplay
+// Desktop autoplay
 const audio = document.getElementById('bgAudio');
 let musicStarted = false;
-
-// Try autoplay desktop
 audio.play().catch(e => console.log("Desktop autoplay blocked:", e));
 
-// Play on first scroll for mobile
+// Mobile scroll autoplay
 window.addEventListener('scroll', () => {
   if (!musicStarted) {
     audio.play().then(() => musicStarted = true)
@@ -217,43 +204,41 @@ window.addEventListener('scroll', () => {
   }
 });
 
-// Slideshow
+// Slideshow logic
 let slideIndex = 0;
 const slides = document.getElementsByClassName("slide");
 
 function showSlides() {
-  for (let i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";
-  }
+  for (let i=0; i<slides.length; i++) slides[i].style.display = "none";
   slideIndex++;
-  if (slideIndex > slides.length) { slideIndex = 1; }
-  slides[slideIndex - 1].style.display = "block";
-  setTimeout(showSlides, 5000); // change slide every 5 seconds
+  if(slideIndex>slides.length) slideIndex=1;
+  slides[slideIndex-1].style.display="block";
+  setTimeout(showSlides, 5000); // 5s per slide
 }
 showSlides();
 
 // Button functions
 function showLove() {
-  document.getElementById("message").style.display = "block";
+  document.getElementById("message").style.display="block";
 }
 
 function moveButton() {
   var btn = document.getElementById("noBtn");
   btn.style.position = "absolute";
-  btn.style.top = Math.random() * 80 + "%";
-  btn.style.left = Math.random() * 80 + "%";
+  btn.style.top = Math.random()*80 + "%";
+  btn.style.left = Math.random()*80 + "%";
 }
 
-// Optional: cute floating sparkles
+// Subtle sparkles
 setInterval(function(){
   var sparkle = document.createElement("div");
-  sparkle.className = "sparkle";
-  sparkle.innerHTML = "✨";
-  sparkle.style.left = Math.random() * 100 + "vw";
-  sparkle.style.fontSize = (Math.random() * 15 + 10) + "px";
+  sparkle.className="sparkle";
+  sparkle.innerHTML="✨";
+  sparkle.style.left = Math.random()*100 + "vw";
+  sparkle.style.fontSize = (Math.random()*15+10)+"px";
   document.body.appendChild(sparkle);
   setTimeout(function(){ sparkle.remove(); },4000);
-},400);
+},500);
 </script>
 
 </body>
