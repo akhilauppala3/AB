@@ -167,24 +167,22 @@ Forever yours… My Bava 💖🌙
 
 <!-- Telugu Romantic Music -->
 <audio id="bgAudio" loop>
-  <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+  <source src="https://raw.githubusercontent.com/username/repo/main/love-song.mp3" type="audio/mpeg">
   Your browser does not support the audio element.
 </audio>
 
 <script>
 const audio = document.getElementById('bgAudio');
-let musicStarted = false;
+let started = false;
 
 // Try autoplay on desktop
-audio.play().catch(e => console.log("Desktop autoplay blocked:", e));
+audio.play().catch(e => console.log("Autoplay blocked:", e));
 
-// Play music on first scroll (mobile-friendly)
+// Play on first scroll for mobile
 window.addEventListener('scroll', () => {
-  if (!musicStarted) {
-    audio.play().then(() => {
-      musicStarted = true;
-      console.log("Music started after scroll!");
-    }).catch(e => console.log("Mobile autoplay blocked:", e));
+  if (!started) {
+    audio.play().then(() => started = true)
+    .catch(err => console.log("Play blocked:", err));
   }
 });
 
