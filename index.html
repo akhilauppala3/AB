@@ -7,15 +7,15 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
 
 <style>
-/* Body - full night sky theme */
+/* Body - romantic night sky theme */
 body {
   margin: 0;
   padding: 0;
   min-height: 100vh;
   font-family: 'Poppins', sans-serif;
   text-align: center;
-  color: #fff3f8;
-  background: linear-gradient(160deg, #0d1b2a, #1b263b, #415a77); /* deep night sky gradient */
+  color: #fff;
+  background: linear-gradient(160deg, #0b1b34, #1b2b4f, #2c3e6b); /* deep night blue */
   overflow-x: hidden;
   position: relative;
 }
@@ -40,9 +40,9 @@ h1 {
   font-family: 'Playfair Display', serif;
   font-size: 2.2rem;
   margin-top: 30px;
-  color: #ffdb9b; /* golden glow */
+  color: #ffdd88; /* golden yellow for standout */
   letter-spacing: 1px;
-  text-shadow: 0 0 10px #ffd699, 0 0 20px #ffcc88;
+  text-shadow: 0 0 12px #ffd699, 0 0 24px #ffcc88;
 }
 
 /* Image Section */
@@ -60,7 +60,7 @@ h1 {
   height: 450px;
   object-fit: contain; /* full face visible */
   border-radius: 20px;
-  box-shadow: 0 10px 35px rgba(255, 255, 255, 0.2);
+  box-shadow: 0 10px 35px rgba(255, 255, 255, 0.25);
   transition: transform 0.4s ease;
   background: rgba(255,255,255,0.05);
 }
@@ -69,28 +69,38 @@ h1 {
   transform: scale(1.05);
 }
 
-/* Paragraphs - bigger, standout color */
+/* Paragraphs - bigger, glowing */
 p {
   max-width: 750px;
-  margin: 20px auto;
-  font-size: 1.4rem;
-  line-height: 1.9;
-  color: #ffd699; /* standout golden */
-  text-shadow: 0 0 8px #ffe6b3, 0 0 15px #ffcc88;
-  animation: glitter 4s ease-in-out infinite alternate;
+  margin: 25px auto;
+  font-size: 1.5rem;
+  line-height: 2;
+  color: #fffa9b;
+  text-shadow: 0 0 8px #fffaa3, 0 0 15px #ffeb7d;
+  position: relative;
+  animation: glow 3s ease-in-out infinite alternate;
 }
 
-/* Remove harsh highlights in bold, make subtle glow instead */
+/* Subtle glow on bold text */
 p b {
-  color: #fff8e1;
-  text-shadow: 0 0 4px #fff8e1, 0 0 8px #ffd699;
+  color: #fff8c6;
+  text-shadow: 0 0 6px #fff8c6, 0 0 12px #ffec88;
   font-weight: 600;
 }
 
-@keyframes glitter {
-  0% { text-shadow: 0 0 4px #ffd699, 0 0 10px #ffe6b3; }
-  50% { text-shadow: 0 0 10px #ffd699, 0 0 20px #ffcc88; }
-  100% { text-shadow: 0 0 4px #ffd699, 0 0 10px #ffe6b3; }
+/* Cute stickers/emojis in paragraphs */
+.sticker {
+  display: inline-block;
+  font-size: 1.3rem;
+  margin-left: 6px;
+  vertical-align: middle;
+  animation: floatSticker 3s ease-in-out infinite alternate;
+}
+
+@keyframes floatSticker {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-5px); }
+  100% { transform: translateY(0px); }
 }
 
 /* Buttons */
@@ -123,8 +133,15 @@ button {
   display: none;
   margin-top: 25px;
   font-size: 1.3rem;
-  color: #ffdb9b;
+  color: #ffdd88;
   font-weight: 500;
+}
+
+/* Paragraph glow animation */
+@keyframes glow {
+  0% { text-shadow: 0 0 6px #fffaa3, 0 0 12px #ffeb7d; }
+  50% { text-shadow: 0 0 14px #fffaa3, 0 0 28px #ffeb7d; }
+  100% { text-shadow: 0 0 6px #fffaa3, 0 0 12px #ffeb7d; }
 }
 
 /* Full screen content */
@@ -144,13 +161,13 @@ html, body {
   <img src="IMG_6203.jpeg" alt="Our Love">
 </div>
 
-<!-- Paragraphs -->
-<p>From childhood memories… 👶 to becoming husband & wife… 💍 Our story was written by destiny.</p>
-<p>This is our <b>first Valentine’s Day after marriage</b>, and I wanted to do something special just for you.</p>
-<p>We’ve known each other since childhood… grew up as <b>bava & maradalu</b>, and destiny decided, <b>“These two belong together.”</b></p>
-<p>Yes, we fight. Yes, we get angry. Yes, we hurt each other sometimes.</p>
-<p>But even after all that, <b>I still choose you. Every single day.</b></p>
-<p>You are my comfort, my safe place, my forever person. ❤️ I LOVE YOU ❤️</p>
+<!-- Paragraphs with stickers -->
+<p>From childhood memories… 👶 to becoming husband & wife… 💍 Our story was written by destiny. <span class="sticker">💖</span></p>
+<p>This is our <b>first Valentine’s Day after marriage</b>, and I wanted to do something special just for you. <span class="sticker">🌹</span></p>
+<p>We’ve known each other since childhood… grew up as <b>bava & maradalu</b>, and destiny decided, <b>“These two belong together.”</b> <span class="sticker">✨</span></p>
+<p>Yes, we fight. Yes, we get angry. Yes, we hurt each other sometimes. <span class="sticker">💌</span></p>
+<p>But even after all that, <b>I still choose you. Every single day.</b> <span class="sticker">❤️</span></p>
+<p>You are my comfort, my safe place, my forever person. ❤️ I LOVE YOU ❤️ <span class="sticker">💫</span></p>
 
 <!-- Buttons -->
 <div class="buttons">
@@ -161,9 +178,9 @@ html, body {
 
 <p id="message">Forever yours… My Bava 💖🌙</p>
 
-<!-- Romantic music -->
+<!-- Soft romantic music -->
 <audio id="bgAudio" loop>
-<source src="Love.mp3" type="audio/mpeg">
+  <source src="Love.mp3" type="audio/mpeg">
 </audio>
 
 <script>
@@ -171,6 +188,7 @@ html, body {
 const audio = document.getElementById("bgAudio");
 let started = false;
 audio.volume = 0.25;
+
 function startMusic(){
   if(!started){
     audio.play().then(()=> started=true).catch(()=>{});
@@ -203,6 +221,21 @@ function createStar(){
   setTimeout(()=> star.remove(), 10000);
 }
 setInterval(createStar, 300);
+
+// Floating hearts over paragraphs
+function createHeart(){
+  const heart = document.createElement("div");
+  heart.innerText = "💖";
+  heart.style.position = "absolute";
+  heart.style.fontSize = (Math.random()*24 + 12) + "px";
+  heart.style.left = Math.random()*80 + "vw";
+  heart.style.top = Math.random()*60 + "vh";
+  heart.style.opacity = 0.7;
+  heart.style.pointerEvents = "none";
+  document.body.appendChild(heart);
+  setTimeout(()=> heart.remove(), 6000);
+}
+setInterval(createHeart, 800);
 
 </script>
 
