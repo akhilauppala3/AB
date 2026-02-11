@@ -5,115 +5,90 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Our First Valentine ❤️</title>
 <style>
+  /* Elegant background and body */
   body {
     margin: 0;
     font-family: 'Segoe UI', sans-serif;
-    background: linear-gradient(135deg, #ffd3e2, #ffe6f0, #ffebf5);
-    color: #ff3366;
+    background: linear-gradient(135deg, #f5f7fa, #c3cfe2); /* soft elegant gradient */
+    color: #333;
     text-align: center;
     padding: 30px;
-    overflow-x: hidden;
   }
 
   h1 {
     margin-top: 20px;
-    font-size: 2.8em;
-    color: #ff1f91;
-    text-shadow: 1px 1px 8px #ffb6ff;
+    font-size: 3em;
+    color: #4b3f72;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
   }
 
   .container {
-    max-width: 800px;
+    max-width: 900px;
     margin: auto;
     padding: 20px;
   }
 
   .card {
-    background: rgba(255,255,255,0.3);
-    backdrop-filter: blur(15px);
-    padding: 25px;
+    background: rgba(255,255,255,0.6);
+    backdrop-filter: blur(10px);
+    padding: 30px;
     border-radius: 25px;
-    margin-top: 20px;
-    box-shadow: 0 0 40px rgba(255,105,180,0.4);
-    transition: transform 0.5s ease, box-shadow 0.5s ease;
-  }
-
-  .card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 0 50px rgba(255,105,180,0.6);
+    margin-top: 30px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
   }
 
   p {
-    font-size: 1.2rem;
-    line-height: 1.6;
+    font-size: 1.3rem;
+    line-height: 1.8;
+    margin: 15px 0;
   }
 
   h2 {
-    margin: 20px 0;
-    color: #ff1f91;
-    text-shadow: 1px 1px 6px #ffb6ff;
+    margin: 25px 0 15px 0;
+    color: #4b3f72;
+    font-size: 2em;
   }
 
   button {
-    padding: 12px 25px;
+    padding: 14px 28px;
     margin: 10px;
     border: none;
     border-radius: 30px;
-    font-size: 1em;
+    font-size: 1.1em;
     cursor: pointer;
     transition: all 0.3s ease;
-    background: linear-gradient(45deg, #ff4da6, #ff85c1);
+    background: linear-gradient(45deg, #6a85b6, #bac8e0);
     color: white;
   }
 
   button:hover {
-    transform: scale(1.1);
-    box-shadow: 0 0 20px rgba(255,77,166,0.7);
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(106,133,182,0.7);
   }
 
-  /* Slideshow */
-  .slideshow-container {
-    position: relative;
-    max-width: 100%;
-    margin: 20px auto;
-    border-radius: 25px;
-    overflow: hidden;
-    box-shadow: 0 0 50px rgba(255,105,180,0.4);
+  /* Side-by-side images */
+  .image-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-top: 25px;
+    flex-wrap: wrap; /* responsive on small screens */
   }
 
-  .slide {
-    display: none;
-    width: 100%;
-    height: 400px; /* fixed height for both images */
-    object-fit: cover; /* ensures both images fill the box proportionally */
-    border-radius: 25px;
-    transition: opacity 1s ease-in-out;
-  }
-
-  .slide img {
-    width: 100%;
-    height: 100%;
-    border-radius: 25px;
+  .image-row img {
+    width: 45%;
+    max-width: 400px;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.15);
     object-fit: cover;
-    display: block;
-    box-shadow: 0 0 30px rgba(255,105,180,0.3);
   }
 
-  /* Subtle sparkle animation */
-  .sparkle {
-    position: absolute;
-    font-size: 15px;
-    color: #ffb6ff;
-    animation: sparkleMove 4s linear infinite;
-    opacity: 0.5;
+  #message {
+    font-size: 1.4em;
+    color: #4b3f72;
+    margin-top: 20px;
   }
-
-  @keyframes sparkleMove {
-    0% { transform: translateY(0) scale(0.5); opacity:0.5;}
-    50% { transform: translateY(-50vh) scale(1); opacity:1;}
-    100% { transform: translateY(-100vh) scale(0.5); opacity:0;}
-  }
-
 </style>
 </head>
 <body>
@@ -122,10 +97,10 @@
 
 <div class="container">
 
-  <!-- Slideshow -->
-  <div class="slideshow-container">
-    <div class="slide"><img src="IMG_3043.jpeg" alt="Childhood Memory"></div>
-    <div class="slide"><img src="IMG_6203.jpeg" alt="Our Love"></div>
+  <!-- Side by side images -->
+  <div class="image-row">
+    <img src="IMG_3043.jpeg" alt="Childhood Memory">
+    <img src="IMG_6203.jpeg" alt="Our Love">
   </div>
 
   <div class="card">
@@ -177,14 +152,14 @@
     <button id="yesBtn" onclick="showLove()">Yes ❤️</button>
     <button id="noBtn" onmouseover="moveButton()">No 😜</button>
 
-    <p id="message" style="display:none; margin-top:20px; font-size:1.2em; color:#ff4da6;">
+    <p id="message" style="display:none;">
       Forever yours… My Bava 💖🌙
     </p>
   </div>
 
 </div>
 
-<!-- Romantic Background Music -->
+<!-- Background music -->
 <audio id="bgAudio" loop>
   <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
   Your browser does not support the audio element.
@@ -204,19 +179,6 @@ window.addEventListener('scroll', () => {
   }
 });
 
-// Slideshow logic
-let slideIndex = 0;
-const slides = document.getElementsByClassName("slide");
-
-function showSlides() {
-  for (let i=0; i<slides.length; i++) slides[i].style.display = "none";
-  slideIndex++;
-  if(slideIndex>slides.length) slideIndex=1;
-  slides[slideIndex-1].style.display="block";
-  setTimeout(showSlides, 5000); // 5s per slide
-}
-showSlides();
-
 // Button functions
 function showLove() {
   document.getElementById("message").style.display="block";
@@ -228,17 +190,6 @@ function moveButton() {
   btn.style.top = Math.random()*80 + "%";
   btn.style.left = Math.random()*80 + "%";
 }
-
-// Subtle sparkles
-setInterval(function(){
-  var sparkle = document.createElement("div");
-  sparkle.className="sparkle";
-  sparkle.innerHTML="✨";
-  sparkle.style.left = Math.random()*100 + "vw";
-  sparkle.style.fontSize = (Math.random()*15+10)+"px";
-  document.body.appendChild(sparkle);
-  setTimeout(function(){ sparkle.remove(); },4000);
-},500);
 </script>
 
 </body>
