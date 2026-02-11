@@ -1,185 +1,190 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Our First Valentine ❤️</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+<!-- Google Elegant Font -->
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&display=swap" rel="stylesheet">
 
 <style>
 
-body{
-  margin:0;
-  font-family:'Montserrat', sans-serif;
-  background: linear-gradient(135deg, #2b1055, #7597de);
-  color:white;
-  overflow-x:hidden;
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Cormorant Garamond', serif;
+  background: linear-gradient(135deg, #1a1a1a, #2c1b18, #3a2a25);
+  color: #f5e6dc;
+  text-align: center;
 }
 
-/* Soft glowing overlay */
-body::before{
-  content:"";
-  position:fixed;
-  width:100%;
-  height:100%;
-  background: radial-gradient(circle at top left, rgba(255,192,203,0.25), transparent 40%),
-              radial-gradient(circle at bottom right, rgba(255,215,180,0.25), transparent 40%);
-  z-index:-1;
+/* Title */
+h1 {
+  font-size: 1.9rem;
+  margin-top: 40px;
+  letter-spacing: 1px;
+  font-weight: 600;
+  color: #f7c8a5;
 }
 
-section{
-  padding:40px 20px;
-  text-align:center;
+/* Image Section */
+.image-wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  flex-wrap: wrap;
+  margin: 40px 20px;
 }
 
-h1{
-  font-family:'Playfair Display', serif;
-  font-size:1.6rem;
-  margin-bottom:30px;
-  color:#ffd6ec;
+.image-wrapper img {
+  width: 45%;
+  max-width: 350px;
+  height: 420px;
+  object-fit: contain; /* prevents cropping */
+  background: #000;
+  border-radius: 20px;
+  padding: 8px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
 }
 
-/* FORCE side by side even on mobile */
-.image-row{
-  display:flex;
-  justify-content:center;
-  gap:10px;
-  flex-wrap:nowrap;   /* Important */
+/* Cute Paragraph Boxes */
+.love-box {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(247, 200, 165, 0.4);
+  padding: 18px;
+  border-radius: 15px;
+  margin: 18px auto;
+  max-width: 650px;
+  backdrop-filter: blur(10px);
+  font-size: 1.05rem;
+  line-height: 1.6;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.3);
 }
 
-.image-row img{
-  width:48%;
-  height:250px;
-  object-fit:cover;
-  border-radius:15px;
-  box-shadow:0 15px 30px rgba(0,0,0,0.4);
-  border:2px solid rgba(255,255,255,0.3);
+/* Love Question Section */
+.buttons {
+  margin-top: 30px;
 }
 
-.love-content{
-  margin-top:40px;
+button {
+  padding: 12px 25px;
+  margin: 10px;
+  border: none;
+  border-radius: 30px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
-.love-content p{
-  font-size:0.95rem;
-  line-height:1.8;
-  margin:15px 0;
-  color:#ffeaf6;
+#yesBtn {
+  background: #b76e79; /* rose gold */
+  color: white;
 }
 
-h2{
-  font-family:'Playfair Display', serif;
-  font-size:1.3rem;
-  margin-top:30px;
-  color:#ffd6ec;
+#noBtn {
+  background: #444;
+  color: white;
+  position: relative;
 }
 
-button{
-  padding:10px 22px;
-  margin:10px;
-  border:none;
-  border-radius:25px;
-  font-size:0.85rem;
-  cursor:pointer;
-  background:linear-gradient(45deg,#ff6fa5,#ffc1e3);
-  color:#4a0033;
-  font-weight:500;
-  transition:0.3s ease;
-}
-
-button:hover{
-  transform:scale(1.08);
-}
-
-#message{
-  margin-top:15px;
-  font-size:0.95rem;
-  color:#ffd6ec;
+#message {
+  display: none;
+  margin-top: 20px;
+  font-size: 1.1rem;
+  color: #f7c8a5;
 }
 
 </style>
 </head>
+
 <body>
 
-<section>
+<h1>Happy First Valentine My Love ❤️</h1>
 
-<h1>Our First Valentine After Marriage ❤️</h1>
-
-<div class="image-row">
-  <img src="IMG_3043.jpeg" alt="Memory 1">
-  <img src="IMG_6203.jpeg" alt="Memory 2">
+<!-- Images Side by Side -->
+<div class="image-wrapper">
+  <img src="IMG_3043.jpeg" alt="Childhood Memory">
+  <img src="IMG_6203.jpeg" alt="Our Love">
 </div>
 
-<div class="love-content">
+<!-- Paragraph Boxes -->
+<div class="love-box">
+From childhood memories… 👶  
+to becoming husband & wife… 💍  
+Our story was written by destiny.
+</div>
 
-  <p>
-    From childhood memories… to becoming husband & wife…  
-    our love feels written by destiny.
-  </p>
+<div class="love-box">
+This is our <b>first Valentine’s Day after marriage</b>,  
+and I wanted to do something special just for you.
+</div>
 
-  <p>
-    We grew up as bava & maradalu…  
-    and life turned that bond into forever.
-  </p>
+<div class="love-box">
+We’ve known each other since childhood…  
+grew up as <b>bava & maradalu</b>,  
+and destiny decided,  
+<b>“These two belong together.”</b>
+</div>
 
-  <p>
-    Even after fights and misunderstandings…
-  </p>
+<div class="love-box">
+Yes, we fight.  
+Yes, we get angry.  
+Yes, we hurt each other sometimes.
+</div>
 
-  <p><b>I still choose you. Every single day.</b></p>
+<div class="love-box">
+But even after all that,  
+<b>I still choose you. Every single day.</b>
+</div>
 
-  <p>
-    You are my comfort. My peace. My forever.
-  </p>
+<div class="love-box">
+You are my comfort,  
+my safe place,  
+my forever person.
+</div>
 
-  <h2>❤️ I Love You ❤️</h2>
+<div class="love-box">
+❤️ I LOVE YOU ❤️
+</div>
 
+<!-- Love Question -->
+<div class="buttons">
   <h2>Do You Love Me? 😘</h2>
-
-  <button onclick="showLove()">Yes ❤️</button>
+  <button id="yesBtn" onclick="showLove()">Yes ❤️</button>
   <button id="noBtn" onmouseover="moveButton()">No 😜</button>
-
-  <p id="message" style="display:none;">
-    Forever yours… My Bava 💖
-  </p>
-
 </div>
 
-</section>
+<p id="message">Forever yours… My Bava 💖🌙</p>
 
-<!-- Soft romantic instrumental (free demo track) -->
-
+<!-- Background Music -->
 <audio id="bgAudio" loop>
   <source src="Love.mp3" type="audio/mpeg">
 </audio>
-<script>
 
+<script>
 const audio = document.getElementById("bgAudio");
 let started = false;
-
-audio.volume = 0.2;
+audio.volume = 0.25;
 
 function startMusic(){
   if(!started){
-    audio.play().then(()=> started=true).catch(()=>{});
+    audio.play().then(()=> started = true).catch(()=>{});
   }
 }
 
 window.addEventListener("touchstart", startMusic);
 window.addEventListener("scroll", startMusic);
 
-function showLove(){
-  document.getElementById("message").style.display="block";
+function showLove() {
+  document.getElementById("message").style.display = "block";
 }
 
-function moveButton(){
-  var btn=document.getElementById("noBtn");
-  btn.style.position="absolute";
-  btn.style.top=Math.random()*80+"%";
-  btn.style.left=Math.random()*80+"%";
+function moveButton() {
+  var btn = document.getElementById("noBtn");
+  btn.style.position = "absolute";
+  btn.style.top = Math.random() * 80 + "%";
+  btn.style.left = Math.random() * 80 + "%";
 }
-
 </script>
 
 </body>
