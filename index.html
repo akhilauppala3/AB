@@ -14,7 +14,7 @@ body {
   min-height: 100vh;
   font-family: 'Poppins', sans-serif;
   text-align: center;
-  color: #ffffff;
+  color: #fff3f8;
   background: linear-gradient(160deg, #0d1b2a, #1b263b, #415a77); /* deep night sky gradient */
   overflow-x: hidden;
   position: relative;
@@ -80,6 +80,13 @@ p {
   animation: glitter 4s ease-in-out infinite alternate;
 }
 
+/* Remove harsh highlights in bold, make subtle glow instead */
+p b {
+  color: #fff8e1;
+  text-shadow: 0 0 4px #fff8e1, 0 0 8px #ffd699;
+  font-weight: 600;
+}
+
 @keyframes glitter {
   0% { text-shadow: 0 0 4px #ffd699, 0 0 10px #ffe6b3; }
   50% { text-shadow: 0 0 10px #ffd699, 0 0 20px #ffcc88; }
@@ -120,7 +127,7 @@ button {
   font-weight: 500;
 }
 
-/* Make page content fill screen */
+/* Full screen content */
 html, body {
   height: 100%;
 }
