@@ -7,29 +7,29 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
 
 <style>
-/* Body: full screen sweet romantic theme */
+/* Body - full night sky theme */
 body {
   margin: 0;
   padding: 0;
   min-height: 100vh;
   font-family: 'Poppins', sans-serif;
   text-align: center;
-  color: #fff3f8;
-  background: linear-gradient(145deg, #ffdde1, #ee9ca7, #ffdde1);
+  color: #ffffff;
+  background: linear-gradient(160deg, #0d1b2a, #1b263b, #415a77); /* deep night sky gradient */
   overflow-x: hidden;
   position: relative;
 }
 
-/* Floating sparkle effect */
-.sparkle {
+/* Floating stars */
+.star {
   position: absolute;
-  color: #ffe6f0;
-  font-size: 10px;
-  opacity: 0.6;
-  animation: sparkleAnim linear infinite;
+  color: #ffffffaa;
+  font-size: 12px;
+  opacity: 0.5;
+  animation: floatStar linear infinite;
 }
 
-@keyframes sparkleAnim {
+@keyframes floatStar {
   0% { transform: translateY(100vh) scale(0.5); opacity: 0.3; }
   50% { opacity: 0.7; }
   100% { transform: translateY(-10vh) scale(1); opacity: 0; }
@@ -38,85 +38,91 @@ body {
 /* Title */
 h1 {
   font-family: 'Playfair Display', serif;
-  font-size: 1.8rem;
-  margin-top: 25px;
-  color: #ff6f91;
+  font-size: 2.2rem;
+  margin-top: 30px;
+  color: #ffdb9b; /* golden glow */
   letter-spacing: 1px;
+  text-shadow: 0 0 10px #ffd699, 0 0 20px #ffcc88;
 }
 
-/* Image wrapper: side by side, fit same size */
+/* Image Section */
 .image-wrapper {
   display: flex;
   justify-content: center;
-  gap: 25px;
+  gap: 30px;
   flex-wrap: wrap;
-  margin: 30px 10px;
+  margin: 40px 10px;
 }
 
 .image-wrapper img {
   width: 45%;
-  max-width: 350px;
-  height: 400px;
-  object-fit: contain; /* ensures image fully fits, no cropping */
+  max-width: 380px;
+  height: 450px;
+  object-fit: contain; /* full face visible */
   border-radius: 20px;
-  box-shadow: 0 10px 25px rgba(255,182,193,0.25);
+  box-shadow: 0 10px 35px rgba(255, 255, 255, 0.2);
   transition: transform 0.4s ease;
-  background: rgba(255,255,255,0.1);
+  background: rgba(255,255,255,0.05);
 }
 
 .image-wrapper img:hover {
-  transform: scale(1.03);
+  transform: scale(1.05);
 }
 
-/* Paragraphs with subtle glitter */
+/* Paragraphs - bigger, standout color */
 p {
-  max-width: 700px;
-  margin: 15px auto;
-  font-size: 1.1rem;
-  line-height: 1.7;
-  color: #ffe6f0;
-  position: relative;
-  animation: glitter 3s ease-in-out infinite alternate;
+  max-width: 750px;
+  margin: 20px auto;
+  font-size: 1.4rem;
+  line-height: 1.9;
+  color: #ffd699; /* standout golden */
+  text-shadow: 0 0 8px #ffe6b3, 0 0 15px #ffcc88;
+  animation: glitter 4s ease-in-out infinite alternate;
 }
 
 @keyframes glitter {
-  0% { text-shadow: 0 0 1px #ffe6f0, 0 0 2px #ffb6c1; }
-  50% { text-shadow: 0 0 3px #ffe6f0, 0 0 6px #ff9ebf; }
-  100% { text-shadow: 0 0 1px #ffe6f0, 0 0 2px #ffb6c1; }
+  0% { text-shadow: 0 0 4px #ffd699, 0 0 10px #ffe6b3; }
+  50% { text-shadow: 0 0 10px #ffd699, 0 0 20px #ffcc88; }
+  100% { text-shadow: 0 0 4px #ffd699, 0 0 10px #ffe6b3; }
 }
 
 /* Buttons */
 .buttons {
-  margin-top: 25px;
+  margin-top: 30px;
 }
 
 button {
-  padding: 12px 25px;
+  padding: 14px 30px;
   margin: 10px;
   border: none;
-  border-radius: 30px;
-  font-size: 1rem;
+  border-radius: 35px;
+  font-size: 1.2rem;
   cursor: pointer;
   transition: 0.3s;
 }
 
 #yesBtn {
-  background: linear-gradient(45deg, #ff9a9e, #fad0c4);
+  background: linear-gradient(45deg, #ffcc70, #ff9e59);
   color: white;
 }
 
 #noBtn {
-  background: #6d6875;
+  background: #555;
   color: white;
   position: relative;
 }
 
 #message {
   display: none;
-  margin-top: 20px;
-  font-size: 1.1rem;
-  color: #ff6f91;
+  margin-top: 25px;
+  font-size: 1.3rem;
+  color: #ffdb9b;
   font-weight: 500;
+}
+
+/* Make page content fill screen */
+html, body {
+  height: 100%;
 }
 </style>
 </head>
@@ -125,7 +131,7 @@ button {
 
 <h1>Happy First Valentine My Love ❤️</h1>
 
-<!-- Images side by side -->
+<!-- Images -->
 <div class="image-wrapper">
   <img src="IMG_3043.jpeg" alt="Childhood Memory">
   <img src="IMG_6203.jpeg" alt="Our Love">
@@ -148,7 +154,7 @@ button {
 
 <p id="message">Forever yours… My Bava 💖🌙</p>
 
-<!-- Soft romantic music -->
+<!-- Romantic music -->
 <audio id="bgAudio" loop>
   <source src="Love.mp3" type="audio/mpeg">
 </audio>
@@ -158,7 +164,6 @@ button {
 const audio = document.getElementById("bgAudio");
 let started = false;
 audio.volume = 0.25;
-
 function startMusic(){
   if(!started){
     audio.play().then(()=> started=true).catch(()=>{});
@@ -180,17 +185,17 @@ function moveButton() {
   btn.style.left = Math.random() * 80 + "%";
 }
 
-// Floating sparkles
-function createSparkle(){
-  const sparkle = document.createElement("div");
-  sparkle.className = "sparkle";
-  sparkle.innerText = "✨";
-  sparkle.style.left = Math.random() * 100 + "vw";
-  sparkle.style.fontSize = (Math.random() * 18 + 8) + "px";
-  document.body.appendChild(sparkle);
-  setTimeout(()=> sparkle.remove(), 8000);
+// Floating stars
+function createStar(){
+  const star = document.createElement("div");
+  star.className = "star";
+  star.innerText = "✨";
+  star.style.left = Math.random() * 100 + "vw";
+  star.style.fontSize = (Math.random() * 20 + 10) + "px";
+  document.body.appendChild(star);
+  setTimeout(()=> star.remove(), 10000);
 }
-setInterval(createSparkle, 400);
+setInterval(createStar, 300);
 
 </script>
 
