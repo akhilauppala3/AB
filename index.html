@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Our First Valentine ❤️</title>
 
-<!-- Luxury Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
 
 <style>
@@ -13,99 +12,119 @@
 body{
   margin:0;
   font-family:'Montserrat', sans-serif;
-  background: linear-gradient(135deg, #1c1c1c, #2c1a2f, #3a1c2e);
-  color:#f8e8ef;
-  overflow-x:hidden;
+  background: linear-gradient(135deg, #2b1e22, #3e272e, #5a343c);
+  color:#f8e6ec;
 }
 
-/* Full width layout */
+/* Rose gold glow overlay */
+body::before{
+  content:"";
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background: radial-gradient(circle at 30% 20%, rgba(255,182,193,0.15), transparent 40%),
+              radial-gradient(circle at 70% 80%, rgba(255,215,180,0.12), transparent 40%);
+  z-index:-1;
+}
+
+/* Full width section */
 section{
   width:100%;
-  padding:60px 8%;
+  padding:60px 6%;
   box-sizing:border-box;
+  text-align:center;
 }
 
 /* Title */
 h1{
   font-family:'Cormorant Garamond', serif;
-  font-size:2em;
-  text-align:center;
+  font-size:1.5em;
   letter-spacing:1px;
-  margin-bottom:40px;
-  color:#f5c6d6;
+  color:#f7c4cf;
+  margin-bottom:50px;
 }
 
-/* Images row */
+/* Image container */
 .image-row{
   display:flex;
   justify-content:center;
+  align-items:center;
   gap:40px;
-  width:100%;
-  flex-wrap:wrap;
+  max-width:1100px;
+  margin:0 auto;
 }
 
+/* Equal size images */
 .image-row img{
-  width:420px;
-  height:520px;
+  width:450px;
+  height:550px;
   object-fit:cover;
-  border-radius:18px;
-  box-shadow:0 20px 50px rgba(0,0,0,0.6);
+  border-radius:20px;
+  box-shadow:0 25px 60px rgba(0,0,0,0.6);
+  border:2px solid rgba(255,192,203,0.4);
   transition:0.4s ease;
 }
 
 .image-row img:hover{
-  transform:scale(1.03);
+  transform:scale(1.04);
+  box-shadow:0 30px 70px rgba(255,182,193,0.5);
 }
 
-/* Luxury content section */
+/* Content */
 .love-content{
   margin-top:80px;
-  max-width:1000px;
+  max-width:900px;
   margin-left:auto;
   margin-right:auto;
-  text-align:center;
 }
 
 .love-content p{
-  font-size:1.05rem;
-  line-height:1.8;
-  margin:18px 0;
-  color:#f1d6df;
+  font-size:1rem;
+  line-height:1.9;
+  margin:20px 0;
+  color:#f3d7df;
 }
 
 h2{
   font-family:'Cormorant Garamond', serif;
-  font-size:1.6rem;
+  font-size:1.5rem;
+  color:#f7b7c3;
   margin-top:40px;
-  color:#f5b7c8;
 }
 
-/* Buttons */
+/* Rose gold buttons */
 button{
-  padding:12px 28px;
+  padding:12px 26px;
   margin:12px;
   border:none;
   border-radius:30px;
-  background:linear-gradient(45deg,#b76e79,#e0a4b4);
-  color:white;
-  font-size:0.95rem;
+  font-size:0.9rem;
   cursor:pointer;
+  background: linear-gradient(45deg, #b76e79, #e6a4b4, #f7c6d4);
+  color:#3a1c23;
+  font-weight:500;
   transition:0.3s ease;
 }
 
 button:hover{
   transform:scale(1.08);
-  box-shadow:0 0 20px rgba(255,182,193,0.6);
+  box-shadow:0 0 25px rgba(255,182,193,0.6);
 }
 
 #message{
   margin-top:20px;
-  font-size:1.1rem;
-  color:#f5c6d6;
+  font-size:1rem;
+  color:#f7c4cf;
 }
 
 /* Responsive */
-@media(max-width:900px){
+@media(max-width:1000px){
+  .image-row{
+    flex-direction:column;
+  }
+
   .image-row img{
     width:90%;
     height:auto;
@@ -129,23 +148,23 @@ button:hover{
 
   <p>
     From childhood memories… to becoming husband & wife…  
-    our story feels like something destiny carefully wrote.
+    our story feels like destiny wrapped in love.
   </p>
 
   <p>
     We grew up as <b>bava & maradalu</b>…  
-    and somehow life turned that bond into forever.
+    and life beautifully turned that bond into forever.
   </p>
 
   <p>
-    We argue. We fight. We misunderstand.  
-    But at the end of every day…
+    We fight. We misunderstand. We argue sometimes.  
+    But at the end of everything…
   </p>
 
   <p><b>I still choose you.</b></p>
 
   <p>
-    You are my comfort. My safe place.  
+    You are my comfort. My peace.  
     My forever person.
   </p>
 
@@ -166,26 +185,24 @@ button:hover{
 
 <!-- Soft romantic background music -->
 <audio id="bgAudio" loop>
-  <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3" type="audio/mpeg">
+  <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3" type="audio/mpeg">
 </audio>
 
 <script>
-// Music autoplay (desktop)
-const audio = document.getElementById("bgAudio");
-let started = false;
 
-audio.volume = 0.3; // soft volume
+const audio = document.getElementById("bgAudio");
+let started=false;
+
+audio.volume=0.25;
 
 audio.play().catch(()=>{});
 
-// Play on scroll (mobile restriction)
-window.addEventListener("scroll", ()=>{
+window.addEventListener("scroll",()=>{
   if(!started){
-    audio.play().then(()=> started=true).catch(()=>{});
+    audio.play().then(()=>started=true).catch(()=>{});
   }
 });
 
-// Buttons
 function showLove(){
   document.getElementById("message").style.display="block";
 }
