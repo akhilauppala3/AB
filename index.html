@@ -1,121 +1,154 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <title>My First Valentine With You ❤️</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(to bottom right, #ffdde1, #ee9ca7);
-      color: #4a2c2a;
-      text-align: center;
-    }
-    .container {
-      padding: 40px 20px;
-      max-width: 800px;
-      margin: auto;
-    }
-    h1 {
-      font-size: 2.5em;
-      margin-bottom: 10px;
-    }
-    h2 {
-      font-weight: normal;
-      margin-top: 0;
-    }
-    .card {
-      background: #fff;
-      border-radius: 20px;
-      padding: 30px;
-      margin-top: 30px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-    }
-    .heart {
-      font-size: 3em;
-      animation: beat 1s infinite;
-    }
-    @keyframes beat {
-      0%, 100% { transform: scale(1); }
-      50% { transform: scale(1.2); }
-    }
-    p {
-      font-size: 1.1em;
-      line-height: 1.6;
-    }
-    .footer {
-      margin-top: 40px;
-      font-style: italic;
-    }
-    button {
-      margin-top: 20px;
-      padding: 12px 25px;
-      border: none;
-      border-radius: 30px;
-      background: #ee6c7d;
-      color: white;
-      font-size: 1em;
-      cursor: pointer;
-    }
-    button:hover {
-      background: #d94f70;
-    }
-  </style>
+<meta charset="UTF-8">
+<title>Our First Valentine ❤️</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
+  color: white;
+  text-align: center;
+  overflow-x: hidden;
+}
+
+h1 {
+  margin-top: 30px;
+  font-size: 2.5em;
+  color: #ff9ed2;
+}
+
+.container {
+  padding: 20px;
+  max-width: 800px;
+  margin: auto;
+}
+
+.card {
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(10px);
+  padding: 25px;
+  border-radius: 20px;
+  margin-top: 20px;
+  box-shadow: 0 0 25px rgba(255,105,180,0.5);
+}
+
+img {
+  width: 90%;
+  border-radius: 20px;
+  margin-top: 20px;
+  box-shadow: 0 0 20px pink;
+}
+
+button {
+  padding: 12px 25px;
+  margin: 10px;
+  border: none;
+  border-radius: 30px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#yesBtn {
+  background: #ff4da6;
+  color: white;
+}
+
+#noBtn {
+  background: #555;
+  color: white;
+  position: relative;
+}
+
+.heart {
+  position: fixed;
+  bottom: -10px;
+  font-size: 20px;
+  animation: float 6s linear infinite;
+  opacity: 0.6;
+}
+
+@keyframes float {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-100vh); opacity:0; }
+}
+</style>
 </head>
+
 <body>
 
-  <div class="container">
-    <h1>Happy Valentine’s Day ❤️</h1>
-    <h2>To My Bava, My Husband, My Home</h2>
+<h1>Happy First Valentine My Love ❤️</h1>
 
-    <div class="heart">💖</div>
+<div class="container">
 
-    <div class="card">
-      <p>
-        This is our <b>first Valentine’s Day after marriage</b>,
-        and I wanted to do something special just for you.
-      </p>
+<div class="card">
+<p>
+From childhood memories... 👶  
+to becoming husband & wife... 💍  
+Our story was written by destiny.
+</p>
 
-      <p>
-        We’ve known each other since childhood…  
-        grew up as <b>bava & maradalu</b>,  
-        and somehow destiny decided,  
-        <b>“These two belong together.”</b>
-      </p>
+<img src="childhood.jpg" alt="Childhood Memory">
 
-      <p>
-        Yes, we fight.  
-        Yes, we get angry.  
-        Yes, we hurt each other sometimes.
-      </p>
+<p>
+We grew up together.  
+We fought.  
+We argued.  
+But somehow… we always came back to each other.
+</p>
 
-      <p>
-        But even after all that,  
-        <b>I still choose you. Every single day.</b>
-      </p>
+<img src="love.jpg" alt="Our Love">
 
-      <p>
-        You are my comfort,  
-        my safe place,  
-        my forever person.
-      </p>
+<p>
+Even after all our fights,  
+my heart still chooses you.  
+Today. Tomorrow. Forever.
+</p>
 
-      <p>
-        I may not say it every day,  
-        but please know this:
-      </p>
+<h2>Do You Love Me? 😘</h2>
 
-      <h2>❤️ I LOVE YOU ❤️</h2>
+<button id="yesBtn" onclick="showLove()">Yes ❤️</button>
+<button id="noBtn" onmouseover="moveButton()">No 😜</button>
 
-      <button onclick="alert('Forever yours 💕')">
-        Click if you love me too 😄
-      </button>
-    </div>
+<p id="message" style="display:none; margin-top:20px; font-size:1.2em; color:#ffb6ff;">
+Forever yours… My Bava 💖🌙
+</p>
 
-    <div class="footer">
-      — Your Wife, Always 💍
-    </div>
-  </div>
+</div>
+
+</div>
+
+<!-- Telugu Romantic Music -->
+<audio autoplay loop>
+  <source src="https://pagalworld.com.se/files/download/id/6466" type="audio/mpeg">
+</audio>
+
+<script>
+function showLove() {
+  document.getElementById("message").style.display = "block";
+}
+
+function moveButton() {
+  var btn = document.getElementById("noBtn");
+  btn.style.position = "absolute";
+  btn.style.top = Math.random() * 80 + "%";
+  btn.style.left = Math.random() * 80 + "%";
+}
+
+/* Floating hearts */
+setInterval(function(){
+  var heart = document.createElement("div");
+  heart.className = "heart";
+  heart.innerHTML = "💖";
+  heart.style.left = Math.random() * 100 + "vw";
+  heart.style.fontSize = (Math.random() * 20 + 10) + "px";
+  document.body.appendChild(heart);
+  setTimeout(function(){ heart.remove(); },6000);
+},500);
+</script>
 
 </body>
 </html>
