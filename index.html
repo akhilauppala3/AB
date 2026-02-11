@@ -5,204 +5,198 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Our First Valentine ❤️</title>
 
-<!-- Romantic Google Font -->
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+<!-- Luxury Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
 
 <style>
-body {
-  margin: 0;
-  font-family: 'Poppins', sans-serif;
-  background: linear-gradient(135deg, #ffd6e8, #ffeaf4, #fff5f8);
-  overflow-x: hidden;
-  text-align: center;
-  padding: 40px 20px;
-  color: #5a3e5c;
+
+body{
+  margin:0;
+  font-family:'Montserrat', sans-serif;
+  background: linear-gradient(135deg, #1c1c1c, #2c1a2f, #3a1c2e);
+  color:#f8e8ef;
+  overflow-x:hidden;
 }
 
-/* Soft floating hearts background */
-.heart-bg {
-  position: fixed;
-  font-size: 20px;
-  opacity: 0.08;
-  animation: float 12s linear infinite;
+/* Full width layout */
+section{
+  width:100%;
+  padding:60px 8%;
+  box-sizing:border-box;
 }
 
-@keyframes float {
-  0% { transform: translateY(100vh); }
-  100% { transform: translateY(-10vh); }
+/* Title */
+h1{
+  font-family:'Cormorant Garamond', serif;
+  font-size:2em;
+  text-align:center;
+  letter-spacing:1px;
+  margin-bottom:40px;
+  color:#f5c6d6;
 }
 
-h1 {
-  font-family: 'Playfair Display', serif;
-  font-size: 2.2em;
-  color: #e84393;
-  margin-bottom: 30px;
-  text-shadow: 0 0 10px rgba(255,105,180,0.3);
+/* Images row */
+.image-row{
+  display:flex;
+  justify-content:center;
+  gap:40px;
+  width:100%;
+  flex-wrap:wrap;
 }
 
-.container {
-  max-width: 900px;
-  margin: auto;
+.image-row img{
+  width:420px;
+  height:520px;
+  object-fit:cover;
+  border-radius:18px;
+  box-shadow:0 20px 50px rgba(0,0,0,0.6);
+  transition:0.4s ease;
 }
 
-/* Images side by side */
-.image-row {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  flex-wrap: wrap;
-  margin-bottom: 40px;
+.image-row img:hover{
+  transform:scale(1.03);
 }
 
-.image-row img {
-  width: 45%;
-  max-width: 400px;
-  border-radius: 20px;
-  box-shadow: 0 15px 30px rgba(255,105,180,0.25);
-  transition: 0.4s ease;
+/* Luxury content section */
+.love-content{
+  margin-top:80px;
+  max-width:1000px;
+  margin-left:auto;
+  margin-right:auto;
+  text-align:center;
 }
 
-.image-row img:hover {
-  transform: scale(1.04);
+.love-content p{
+  font-size:1.05rem;
+  line-height:1.8;
+  margin:18px 0;
+  color:#f1d6df;
 }
 
-/* Romantic glowing card */
-.card {
-  background: rgba(255,255,255,0.7);
-  backdrop-filter: blur(15px);
-  border-radius: 25px;
-  padding: 35px 25px;
-  box-shadow: 0 0 40px rgba(255,105,180,0.25);
-  animation: glow 4s ease-in-out infinite alternate;
+h2{
+  font-family:'Cormorant Garamond', serif;
+  font-size:1.6rem;
+  margin-top:40px;
+  color:#f5b7c8;
 }
 
-@keyframes glow {
-  from { box-shadow: 0 0 25px rgba(255,105,180,0.25); }
-  to { box-shadow: 0 0 45px rgba(255,105,180,0.45); }
+/* Buttons */
+button{
+  padding:12px 28px;
+  margin:12px;
+  border:none;
+  border-radius:30px;
+  background:linear-gradient(45deg,#b76e79,#e0a4b4);
+  color:white;
+  font-size:0.95rem;
+  cursor:pointer;
+  transition:0.3s ease;
 }
 
-p {
-  font-size: 1.2rem;
-  line-height: 1.8;
-  margin: 15px 0;
+button:hover{
+  transform:scale(1.08);
+  box-shadow:0 0 20px rgba(255,182,193,0.6);
 }
 
-h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.8rem;
-  color: #e84393;
-}
-
-/* Cute buttons */
-button {
-  padding: 14px 28px;
-  margin: 10px;
-  border: none;
-  border-radius: 30px;
-  font-size: 1.05em;
-  cursor: pointer;
-  background: linear-gradient(45deg, #ff6fa5, #ff9ecf);
-  color: white;
-  transition: 0.3s ease;
-}
-
-button:hover {
-  transform: scale(1.07);
-  box-shadow: 0 0 20px rgba(255,105,180,0.6);
-}
-
-#message {
-  font-size: 1.3em;
-  margin-top: 20px;
-  color: #e84393;
+#message{
+  margin-top:20px;
+  font-size:1.1rem;
+  color:#f5c6d6;
 }
 
 /* Responsive */
-@media(max-width: 600px){
-  .image-row img { width: 100%; }
+@media(max-width:900px){
+  .image-row img{
+    width:90%;
+    height:auto;
+  }
 }
+
 </style>
 </head>
 <body>
 
-<h1>Happy First Valentine My Love ❤️</h1>
+<section>
 
-<div class="container">
+<h1>Our First Valentine After Marriage ❤️</h1>
 
-  <!-- Images -->
-  <div class="image-row">
-    <img src="IMG_3043.jpeg" alt="Childhood Memory">
-    <img src="IMG_6203.jpeg" alt="Our Love">
-  </div>
+<div class="image-row">
+  <img src="IMG_3043.jpeg" alt="Memory 1">
+  <img src="IMG_6203.jpeg" alt="Memory 2">
+</div>
 
-  <!-- Romantic Message -->
-  <div class="card">
-    <p>From childhood memories... 👶 to becoming husband & wife... 💍 Our story was written by destiny.</p>
+<div class="love-content">
 
-    <p>This is our <b>first Valentine’s Day after marriage</b>, and I wanted to do something special just for you.</p>
+  <p>
+    From childhood memories… to becoming husband & wife…  
+    our story feels like something destiny carefully wrote.
+  </p>
 
-    <p>We’ve known each other since childhood… grew up as <b>bava & maradalu</b>, and somehow destiny decided, <b>“These two belong together.”</b></p>
+  <p>
+    We grew up as <b>bava & maradalu</b>…  
+    and somehow life turned that bond into forever.
+  </p>
 
-    <p>Yes, we fight. Yes, we get angry. Yes, we hurt each other sometimes.</p>
+  <p>
+    We argue. We fight. We misunderstand.  
+    But at the end of every day…
+  </p>
 
-    <p>But even after all that, <b>I still choose you. Every single day.</b></p>
+  <p><b>I still choose you.</b></p>
 
-    <p>You are my comfort, my safe place, my forever person.</p>
+  <p>
+    You are my comfort. My safe place.  
+    My forever person.
+  </p>
 
-    <h2>❤️ I LOVE YOU ❤️</h2>
+  <h2>❤️ I Love You ❤️</h2>
 
-    <p>Even after all our fights, my heart still chooses you. Today. Tomorrow. Forever.</p>
+  <h2>Do You Love Me? 😌</h2>
 
-    <h2>Do You Love Me? 😘</h2>
+  <button onclick="showLove()">Yes ❤️</button>
+  <button id="noBtn" onmouseover="moveButton()">No 😜</button>
 
-    <button onclick="showLove()">Yes ❤️</button>
-    <button id="noBtn" onmouseover="moveButton()">No 😜</button>
-
-    <p id="message" style="display:none;">Forever yours… My Bava 💖🌙</p>
-  </div>
+  <p id="message" style="display:none;">
+    Forever yours… My Bava 💖
+  </p>
 
 </div>
 
-<!-- Background Music -->
+</section>
+
+<!-- Soft romantic background music -->
 <audio id="bgAudio" loop>
-  <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+  <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3" type="audio/mpeg">
 </audio>
 
 <script>
-// Soft floating hearts
-for (let i = 0; i < 15; i++) {
-  let heart = document.createElement("div");
-  heart.className = "heart-bg";
-  heart.innerHTML = "💖";
-  heart.style.left = Math.random() * 100 + "vw";
-  heart.style.fontSize = (Math.random() * 25 + 15) + "px";
-  heart.style.animationDuration = (Math.random() * 10 + 8) + "s";
-  document.body.appendChild(heart);
-}
+// Music autoplay (desktop)
+const audio = document.getElementById("bgAudio");
+let started = false;
 
-// Music autoplay
-const audio = document.getElementById('bgAudio');
-let musicStarted = false;
+audio.volume = 0.3; // soft volume
 
 audio.play().catch(()=>{});
 
-window.addEventListener('scroll', () => {
-  if (!musicStarted) {
-    audio.play().then(()=> musicStarted=true).catch(()=>{});
+// Play on scroll (mobile restriction)
+window.addEventListener("scroll", ()=>{
+  if(!started){
+    audio.play().then(()=> started=true).catch(()=>{});
   }
 });
 
 // Buttons
-function showLove() {
+function showLove(){
   document.getElementById("message").style.display="block";
 }
 
-function moveButton() {
-  var btn = document.getElementById("noBtn");
+function moveButton(){
+  var btn=document.getElementById("noBtn");
   btn.style.position="absolute";
-  btn.style.top = Math.random()*80 + "%";
-  btn.style.left = Math.random()*80 + "%";
+  btn.style.top=Math.random()*80+"%";
+  btn.style.left=Math.random()*80+"%";
 }
+
 </script>
 
 </body>
