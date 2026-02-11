@@ -15,22 +15,27 @@ body {
   font-family: 'Poppins', sans-serif;
   text-align: center;
   color: #f8e6e6;
-  background: radial-gradient(circle at top, #0d1b2a, #1b263b, #415a77);
+
+  /* Night sky background */
+  background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1950&q=80') no-repeat center center fixed;
+  background-size: cover;
   overflow-x: hidden;
   position: relative;
 }
 
-/* Stars background */
-body::before {
-  content: '';
+/* Floating stars in background */
+.star {
   position: absolute;
-  width: 100%;
-  height: 100%;
-  background: url('https://i.ibb.co/0m1tJrW/stars.png') repeat;
-  opacity: 0.4;
-  top: 0;
-  left: 0;
-  z-index: -1;
+  color: #ffe6f0;
+  font-size: 14px;
+  opacity: 0.6;
+  animation: floatStar linear infinite;
+}
+
+@keyframes floatStar {
+  0% { transform: translateY(100vh) scale(0.5); opacity: 0.4; }
+  50% { opacity: 0.8; }
+  100% { transform: translateY(-10vh) scale(1); opacity: 0; }
 }
 
 /* Title */
@@ -67,29 +72,21 @@ h1 {
   transform: scale(1.03);
 }
 
-/* Paragraph boxes (glassmorphism) */
-.love-box {
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255,182,193,0.3);
-  padding: 22px;
+/* Paragraphs with subtle glitter */
+p {
   max-width: 650px;
   margin: 18px auto;
-  border-radius: 25px;
-  backdrop-filter: blur(8px);
-  box-shadow: 0 8px 25px rgba(255,182,193,0.15);
   font-size: 1.05rem;
   line-height: 1.7;
-  position: relative;
   color: #ffe6f0;
+  position: relative;
+  animation: glitter 3s ease-in-out infinite alternate;
 }
 
-.love-box::after {
-  content: "❤️";
-  position: absolute;
-  bottom: -12px;
-  right: 20px;
-  font-size: 18px;
-  opacity: 0.4;
+@keyframes glitter {
+  0% { text-shadow: 0 0 2px #ffe6f0, 0 0 5px #ffc0cb; }
+  50% { text-shadow: 0 0 4px #ffe6f0, 0 0 10px #ffb6c1; }
+  100% { text-shadow: 0 0 2px #ffe6f0, 0 0 5px #ffc0cb; }
 }
 
 /* Buttons */
@@ -126,21 +123,6 @@ button {
   font-weight: 500;
 }
 
-/* Floating stars animation */
-.star {
-  position: absolute;
-  color: #ffe6f0;
-  font-size: 14px;
-  opacity: 0.6;
-  animation: floatStar linear infinite;
-}
-
-@keyframes floatStar {
-  0% { transform: translateY(100vh) scale(0.5); opacity: 0.4; }
-  50% { opacity: 0.8; }
-  100% { transform: translateY(-10vh) scale(1); opacity: 0; }
-}
-
 </style>
 </head>
 
@@ -148,43 +130,26 @@ button {
 
 <h1>Happy First Valentine My Love ❤️</h1>
 
+<!-- Images side by side -->
 <div class="image-wrapper">
   <img src="IMG_3043.jpeg" alt="Childhood Memory">
   <img src="IMG_6203.jpeg" alt="Our Love">
 </div>
 
-<div class="love-box">
-From childhood memories… 👶 to becoming husband & wife… 💍  
-Our story was written by destiny.
-</div>
+<!-- Romantic paragraphs -->
+<p>From childhood memories… 👶 to becoming husband & wife… 💍 Our story was written by destiny.</p>
 
-<div class="love-box">
-This is our <b>first Valentine’s Day after marriage</b>,  
-and I wanted to do something special just for you.
-</div>
+<p>This is our <b>first Valentine’s Day after marriage</b>, and I wanted to do something special just for you.</p>
 
-<div class="love-box">
-We’ve known each other since childhood…  
-grew up as <b>bava & maradalu</b>,  
-and destiny decided,  
-<b>“These two belong together.”</b>
-</div>
+<p>We’ve known each other since childhood… grew up as <b>bava & maradalu</b>, and destiny decided, <b>“These two belong together.”</b></p>
 
-<div class="love-box">
-Yes, we fight. Yes, we get angry.  
-Yes, we hurt each other sometimes.
-</div>
+<p>Yes, we fight. Yes, we get angry. Yes, we hurt each other sometimes.</p>
 
-<div class="love-box">
-But even after all that,  
-<b>I still choose you. Every single day.</b>
-</div>
+<p>But even after all that, <b>I still choose you. Every single day.</b></p>
 
-<div class="love-box">
-You are my comfort, my safe place, my forever person.  
-❤️ I LOVE YOU ❤️
-</div>
+<p>You are my comfort, my safe place, my forever person. ❤️ I LOVE YOU ❤️</p>
 
+<!-- Buttons -->
 <div class="buttons">
   <h2>Do You Love Me? 😘</h2>
   <button id="yesBtn" onclick="showLove()">Yes ❤️</button>
