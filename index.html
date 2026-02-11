@@ -5,22 +5,23 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Our First Valentine ❤️</title>
 <style>
-  /* Elegant background */
+  /* Romantic Valentine background */
   body {
     margin: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #ece9e6, #ffffff);
-    color: #2c2c2c;
+    background: linear-gradient(135deg, #ffe0e6, #fff0f5);
     text-align: center;
     padding: 40px 20px;
+    color: #4b3f72;
   }
 
   h1 {
-    font-size: 3em;
-    color: #5b3c88;
-    margin-bottom: 30px;
+    font-size: 2.2em; /* smaller title */
     font-weight: 600;
-    letter-spacing: 1px;
+    margin-bottom: 30px;
+    color: #ff4da6;
+    text-shadow: 1px 1px 6px #ffc0dd;
+    line-height: 1.2;
   }
 
   .container {
@@ -39,12 +40,11 @@
   }
 
   .image-row img {
-    width: 100%;
+    width: 45%;
     max-width: 400px;
-    height: auto;
     border-radius: 20px;
     object-fit: cover;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    box-shadow: 0 10px 25px rgba(255,105,180,0.3);
     transition: transform 0.3s ease;
   }
 
@@ -54,11 +54,11 @@
 
   /* Glassy card */
   .card {
-    background: rgba(255, 255, 255, 0.7);
+    background: rgba(255,255,255,0.7);
     backdrop-filter: blur(12px);
     border-radius: 25px;
     padding: 30px 25px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    box-shadow: 0 10px 30px rgba(255,105,180,0.2);
     margin-bottom: 40px;
   }
 
@@ -69,8 +69,8 @@
   }
 
   h2 {
-    font-size: 2rem;
-    color: #5b3c88;
+    font-size: 1.8rem;
+    color: #ff4da6;
     margin: 25px 0 15px 0;
   }
 
@@ -83,28 +83,28 @@
     font-size: 1.1em;
     cursor: pointer;
     transition: all 0.3s ease;
-    background: linear-gradient(45deg, #8e44ad, #a569bd);
+    background: linear-gradient(45deg, #ff4da6, #ff85c1);
     color: white;
   }
 
   button:hover {
     transform: scale(1.05);
-    box-shadow: 0 0 15px rgba(142,68,173,0.7);
+    box-shadow: 0 0 15px rgba(255,77,166,0.7);
   }
 
   #message {
     font-size: 1.35em;
-    color: #5b3c88;
+    color: #ff4da6;
     margin-top: 20px;
   }
 
   /* Responsive */
   @media(max-width: 850px){
-    .image-row img { max-width: 48%; }
+    .image-row img { width: 48%; }
   }
 
   @media(max-width: 600px){
-    .image-row img { max-width: 100%; }
+    .image-row img { width: 100%; }
   }
 </style>
 </head>
@@ -120,7 +120,7 @@
     <img src="IMG_6203.jpeg" alt="Our Love">
   </div>
 
-  <!-- Card with romantic text -->
+  <!-- Romantic card -->
   <div class="card">
     <p>From childhood memories... 👶 to becoming husband & wife... 💍 Our story was written by destiny.</p>
 
@@ -155,11 +155,12 @@
 </audio>
 
 <script>
-// Music autoplay
+// Desktop autoplay
 const audio = document.getElementById('bgAudio');
 let musicStarted = false;
 audio.play().catch(e => console.log("Desktop autoplay blocked:", e));
 
+// Mobile scroll autoplay
 window.addEventListener('scroll', () => {
   if (!musicStarted) {
     audio.play().then(() => musicStarted = true)
