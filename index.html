@@ -3,7 +3,19 @@
 <head>
 <meta charset="UTF-8">
 <title>Our First Valentine ❤️</title>
-
+ <style>
+    body {
+      height: 200vh; /* allow scrolling */
+      font-family: sans-serif;
+      padding: 50px;
+    }
+    h1 {
+      margin-bottom: 20px;
+    }
+    p {
+      font-size: 1.2rem;
+    }
+  </style>
 <style>
 body {
   margin: 0;
@@ -154,10 +166,28 @@ Forever yours… My Bava 💖🌙
 </div>
 
 <!-- Telugu Romantic Music -->
-<audio autoplay loop>
-  <source src="your-free-song.mp3" type="audio/mpeg">
+<audio id="bgAudio" loop>
+  <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
 </audio>
+
 <script>
+const audio = document.getElementById('bgAudio');
+let musicStarted = false;
+
+// Try autoplay on desktop
+audio.play().catch(e => console.log("Desktop autoplay blocked:", e));
+
+// Play music on first scroll (mobile-friendly)
+window.addEventListener('scroll', () => {
+  if (!musicStarted) {
+    audio.play().then(() => {
+      musicStarted = true;
+      console.log("Music started after scroll!");
+    }).catch(e => console.log("Mobile autoplay blocked:", e));
+  }
+});
+
 function showLove() {
   document.getElementById("message").style.display = "block";
 }
