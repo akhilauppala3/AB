@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <title>Our First Valentine ❤️</title>
@@ -7,146 +7,135 @@
 <style>
 body {
   margin: 0;
+  padding: 0;
   font-family: 'Segoe UI', sans-serif;
-  background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
-  color: white;
-  text-align: center;
+  background: linear-gradient(135deg, #ff9a9e, #fad0c4);
   overflow-x: hidden;
+  text-align: center;
+  color: #5a2a2a;
 }
 
-h1 {
-  margin-top: 30px;
-  font-size: 2.5em;
-  color: #ff9ed2;
-}
-
-.container {
-  padding: 20px;
-  max-width: 800px;
-  margin: auto;
-}
-
-.card {
-  background: rgba(255,255,255,0.08);
-  backdrop-filter: blur(10px);
-  padding: 25px;
-  border-radius: 20px;
-  margin-top: 20px;
-  box-shadow: 0 0 25px rgba(255,105,180,0.5);
-}
-
-img {
-  width: 90%;
-  border-radius: 20px;
-  margin-top: 20px;
-  box-shadow: 0 0 20px pink;
-}
-
-button {
-  padding: 12px 25px;
-  margin: 10px;
-  border: none;
-  border-radius: 30px;
-  font-size: 1em;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-#yesBtn {
-  background: #ff4da6;
-  color: white;
-}
-
-#noBtn {
-  background: #555;
-  color: white;
-  position: relative;
-}
-
+/* Floating hearts */
 .heart {
   position: fixed;
   bottom: -10px;
   font-size: 20px;
   animation: float 6s linear infinite;
-  opacity: 0.6;
+  opacity: 0.7;
 }
 
 @keyframes float {
-  0% { transform: translateY(0); }
-  100% { transform: translateY(-100vh); opacity:0; }
+  0% { transform: translateY(0); opacity: 0.7; }
+  100% { transform: translateY(-100vh); opacity: 0; }
+}
+
+.container {
+  padding: 40px 20px;
+  max-width: 800px;
+  margin: auto;
+}
+
+.card {
+  background: white;
+  padding: 30px;
+  border-radius: 25px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+  margin-top: 30px;
+}
+
+h1 {
+  font-size: 2.5em;
+}
+
+.love-button {
+  margin-top: 20px;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 30px;
+  background: #ff4e73;
+  color: white;
+  font-size: 1em;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.love-button:hover {
+  background: #e6004c;
+  transform: scale(1.1);
+}
+
+footer {
+  margin-top: 40px;
+  font-style: italic;
 }
 </style>
 </head>
 
 <body>
 
-<h1>Happy First Valentine My Love ❤️</h1>
-
 <div class="container">
+  <h1>Happy Valentine’s Day ❤️</h1>
+  <h2>To My Bava, My Husband, My Forever</h2>
 
-<div class="card">
-<p>
-From childhood memories... 👶  
-to becoming husband & wife... 💍  
-Our story was written by destiny.
-</p>
+  <div class="card">
+    <p>
+      From childhood memories…  
+      to becoming husband and wife…  
+      our story feels like destiny written with love.
+    </p>
 
-<img src="childhood.jpg" alt="Childhood Memory">
+    <p>
+      We fight.  
+      We argue.  
+      We misunderstand each other.
+    </p>
 
-<p>
-We grew up together.  
-We fought.  
-We argued.  
-But somehow… we always came back to each other.
-</p>
+    <p>
+      But at the end of every day…  
+      my heart still chooses you.
+    </p>
 
-<img src="love.jpg" alt="Our Love">
+    <h3>Why I Love You 💖</h3>
+    <p>
+      ❤️ Because you are my comfort  
+      <br>❤️ Because you are my home  
+      <br>❤️ Because no matter what, you are mine  
+    </p>
 
-<p>
-Even after all our fights,  
-my heart still chooses you.  
-Today. Tomorrow. Forever.
-</p>
+    <h2>I Love You So Much ❤️</h2>
 
-<h2>Do You Love Me? 😘</h2>
+    <button class="love-button" onclick="showMessage()">
+      Click if you love me too 😄
+    </button>
 
-<button id="yesBtn" onclick="showLove()">Yes ❤️</button>
-<button id="noBtn" onmouseover="moveButton()">No 😜</button>
+    <p id="secretMessage" style="display:none; margin-top:20px; font-weight:bold;">
+      Forever yours. Today. Tomorrow. Always. 💍💕
+    </p>
+  </div>
 
-<p id="message" style="display:none; margin-top:20px; font-size:1.2em; color:#ffb6ff;">
-Forever yours… My Bava 💖🌙
-</p>
-
+  <footer>
+    — Your Wife, With All My Love 💖
+  </footer>
 </div>
-
-</div>
-
-<!-- Telugu Romantic Music -->
-<audio autoplay loop>
-  <source src="https://pagalworld.com.se/files/download/id/6466" type="audio/mpeg">
-</audio>
 
 <script>
-function showLove() {
-  document.getElementById("message").style.display = "block";
+function showMessage() {
+  document.getElementById("secretMessage").style.display = "block";
 }
 
-function moveButton() {
-  var btn = document.getElementById("noBtn");
-  btn.style.position = "absolute";
-  btn.style.top = Math.random() * 80 + "%";
-  btn.style.left = Math.random() * 80 + "%";
-}
-
-/* Floating hearts */
+/* Create floating hearts */
 setInterval(function(){
   var heart = document.createElement("div");
   heart.className = "heart";
   heart.innerHTML = "💖";
   heart.style.left = Math.random() * 100 + "vw";
   heart.style.fontSize = (Math.random() * 20 + 10) + "px";
+  heart.style.animationDuration = (Math.random() * 3 + 3) + "s";
   document.body.appendChild(heart);
-  setTimeout(function(){ heart.remove(); },6000);
+
+  setTimeout(function(){
+    heart.remove();
+  },6000);
 },500);
 </script>
 
