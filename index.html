@@ -2,141 +2,207 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Our First Valentine ❤️</title>
+
+<!-- Romantic Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
 body {
   margin: 0;
-  padding: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #ffd6e8, #ffeaf4, #fff5f8);
   overflow-x: hidden;
   text-align: center;
-  color: #5a2a2a;
+  padding: 40px 20px;
+  color: #5a3e5c;
 }
 
-/* Floating hearts */
-.heart {
+/* Soft floating hearts background */
+.heart-bg {
   position: fixed;
-  bottom: -10px;
   font-size: 20px;
-  animation: float 6s linear infinite;
-  opacity: 0.7;
+  opacity: 0.08;
+  animation: float 12s linear infinite;
 }
 
 @keyframes float {
-  0% { transform: translateY(0); opacity: 0.7; }
-  100% { transform: translateY(-100vh); opacity: 0; }
-}
-
-.container {
-  padding: 40px 20px;
-  max-width: 800px;
-  margin: auto;
-}
-
-.card {
-  background: white;
-  padding: 30px;
-  border-radius: 25px;
-  box-shadow: 0 15px 35px rgba(0,0,0,0.2);
-  margin-top: 30px;
+  0% { transform: translateY(100vh); }
+  100% { transform: translateY(-10vh); }
 }
 
 h1 {
-  font-size: 2.5em;
+  font-family: 'Playfair Display', serif;
+  font-size: 2.2em;
+  color: #e84393;
+  margin-bottom: 30px;
+  text-shadow: 0 0 10px rgba(255,105,180,0.3);
 }
 
-.love-button {
-  margin-top: 20px;
-  padding: 12px 25px;
+.container {
+  max-width: 900px;
+  margin: auto;
+}
+
+/* Images side by side */
+.image-row {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+
+.image-row img {
+  width: 45%;
+  max-width: 400px;
+  border-radius: 20px;
+  box-shadow: 0 15px 30px rgba(255,105,180,0.25);
+  transition: 0.4s ease;
+}
+
+.image-row img:hover {
+  transform: scale(1.04);
+}
+
+/* Romantic glowing card */
+.card {
+  background: rgba(255,255,255,0.7);
+  backdrop-filter: blur(15px);
+  border-radius: 25px;
+  padding: 35px 25px;
+  box-shadow: 0 0 40px rgba(255,105,180,0.25);
+  animation: glow 4s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  from { box-shadow: 0 0 25px rgba(255,105,180,0.25); }
+  to { box-shadow: 0 0 45px rgba(255,105,180,0.45); }
+}
+
+p {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  margin: 15px 0;
+}
+
+h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
+  color: #e84393;
+}
+
+/* Cute buttons */
+button {
+  padding: 14px 28px;
+  margin: 10px;
   border: none;
   border-radius: 30px;
-  background: #ff4e73;
-  color: white;
-  font-size: 1em;
+  font-size: 1.05em;
   cursor: pointer;
-  transition: 0.3s;
+  background: linear-gradient(45deg, #ff6fa5, #ff9ecf);
+  color: white;
+  transition: 0.3s ease;
 }
 
-.love-button:hover {
-  background: #e6004c;
-  transform: scale(1.1);
+button:hover {
+  transform: scale(1.07);
+  box-shadow: 0 0 20px rgba(255,105,180,0.6);
 }
 
-footer {
-  margin-top: 40px;
-  font-style: italic;
+#message {
+  font-size: 1.3em;
+  margin-top: 20px;
+  color: #e84393;
+}
+
+/* Responsive */
+@media(max-width: 600px){
+  .image-row img { width: 100%; }
 }
 </style>
 </head>
-
 <body>
 
+<h1>Happy First Valentine My Love ❤️</h1>
+
 <div class="container">
-  <h1>Happy Valentine’s Day ❤️</h1>
-  <h2>To My Bava, My Husband, My Forever</h2>
 
-  <div class="card">
-    <p>
-      From childhood memories…  
-      to becoming husband and wife…  
-      our story feels like destiny written with love.
-    </p>
-
-    <p>
-      We fight.  
-      We argue.  
-      We misunderstand each other.
-    </p>
-
-    <p>
-      But at the end of every day…  
-      my heart still chooses you.
-    </p>
-
-    <h3>Why I Love You 💖</h3>
-    <p>
-      ❤️ Because you are my comfort  
-      <br>❤️ Because you are my home  
-      <br>❤️ Because no matter what, you are mine  
-    </p>
-
-    <h2>I Love You So Much ❤️</h2>
-
-    <button class="love-button" onclick="showMessage()">
-      Click if you love me too 😄
-    </button>
-
-    <p id="secretMessage" style="display:none; margin-top:20px; font-weight:bold;">
-      Forever yours. Today. Tomorrow. Always. 💍💕
-    </p>
+  <!-- Images -->
+  <div class="image-row">
+    <img src="IMG_3043.jpeg" alt="Childhood Memory">
+    <img src="IMG_6203.jpeg" alt="Our Love">
   </div>
 
-  <footer>
-    — Your Wife, With All My Love 💖
-  </footer>
+  <!-- Romantic Message -->
+  <div class="card">
+    <p>From childhood memories... 👶 to becoming husband & wife... 💍 Our story was written by destiny.</p>
+
+    <p>This is our <b>first Valentine’s Day after marriage</b>, and I wanted to do something special just for you.</p>
+
+    <p>We’ve known each other since childhood… grew up as <b>bava & maradalu</b>, and somehow destiny decided, <b>“These two belong together.”</b></p>
+
+    <p>Yes, we fight. Yes, we get angry. Yes, we hurt each other sometimes.</p>
+
+    <p>But even after all that, <b>I still choose you. Every single day.</b></p>
+
+    <p>You are my comfort, my safe place, my forever person.</p>
+
+    <h2>❤️ I LOVE YOU ❤️</h2>
+
+    <p>Even after all our fights, my heart still chooses you. Today. Tomorrow. Forever.</p>
+
+    <h2>Do You Love Me? 😘</h2>
+
+    <button onclick="showLove()">Yes ❤️</button>
+    <button id="noBtn" onmouseover="moveButton()">No 😜</button>
+
+    <p id="message" style="display:none;">Forever yours… My Bava 💖🌙</p>
+  </div>
+
 </div>
 
-<script>
-function showMessage() {
-  document.getElementById("secretMessage").style.display = "block";
-}
+<!-- Background Music -->
+<audio id="bgAudio" loop>
+  <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+</audio>
 
-/* Create floating hearts */
-setInterval(function(){
-  var heart = document.createElement("div");
-  heart.className = "heart";
+<script>
+// Soft floating hearts
+for (let i = 0; i < 15; i++) {
+  let heart = document.createElement("div");
+  heart.className = "heart-bg";
   heart.innerHTML = "💖";
   heart.style.left = Math.random() * 100 + "vw";
-  heart.style.fontSize = (Math.random() * 20 + 10) + "px";
-  heart.style.animationDuration = (Math.random() * 3 + 3) + "s";
+  heart.style.fontSize = (Math.random() * 25 + 15) + "px";
+  heart.style.animationDuration = (Math.random() * 10 + 8) + "s";
   document.body.appendChild(heart);
+}
 
-  setTimeout(function(){
-    heart.remove();
-  },6000);
-},500);
+// Music autoplay
+const audio = document.getElementById('bgAudio');
+let musicStarted = false;
+
+audio.play().catch(()=>{});
+
+window.addEventListener('scroll', () => {
+  if (!musicStarted) {
+    audio.play().then(()=> musicStarted=true).catch(()=>{});
+  }
+});
+
+// Buttons
+function showLove() {
+  document.getElementById("message").style.display="block";
+}
+
+function moveButton() {
+  var btn = document.getElementById("noBtn");
+  btn.style.position="absolute";
+  btn.style.top = Math.random()*80 + "%";
+  btn.style.left = Math.random()*80 + "%";
+}
 </script>
 
 </body>
