@@ -40,33 +40,38 @@ h1 {
   font-family: 'Playfair Display', serif;
   font-size: 2.2rem;
   margin-top: 30px;
-  color: #ffdd88; /* golden yellow */
+  color: #ffdd88; 
   letter-spacing: 1px;
   text-shadow: 0 0 12px #ffd699, 0 0 24px #ffcc88;
 }
 
-/* Image Section */
-.image-wrapper {
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-  flex-wrap: wrap;
-  margin: 40px 10px;
+/* Slideshow container */
+.slideshow-container {
+  position: relative;
+  max-width: 800px;
+  margin: 40px auto;
+  border-radius: 20px;
+  overflow: hidden;
+  height: 450px;
 }
 
-.image-wrapper img {
-  width: 45%;
-  max-width: 380px;
-  height: 450px;
-  object-fit: contain; /* full face visible */
+/* Slides */
+.slide {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  object-fit: contain;
   border-radius: 20px;
+  opacity: 0;
+  transition: opacity 1.5s ease-in-out;
   box-shadow: 0 10px 35px rgba(255, 255, 255, 0.25);
-  transition: transform 0.4s ease;
   background: rgba(255,255,255,0.05);
 }
 
-.image-wrapper img:hover {
-  transform: scale(1.05);
+.slide.active {
+  opacity: 1;
 }
 
 /* Paragraphs - bigger and bright without highlights */
@@ -75,13 +80,12 @@ p {
   margin: 25px auto;
   font-size: 1.5rem;
   line-height: 2;
-  color: #fff8c6; /* uniform bright color */
+  color: #fff8c6; 
   text-shadow: 0 0 8px #fff8c6, 0 0 15px #ffeb7d;
   position: relative;
   animation: glow 3s ease-in-out infinite alternate;
 }
 
-/* Paragraph glow animation */
 @keyframes glow {
   0% { text-shadow: 0 0 6px #fff8c6, 0 0 12px #ffeb7d; }
   50% { text-shadow: 0 0 14px #fff8c6, 0 0 28px #ffeb7d; }
@@ -148,10 +152,10 @@ html, body {
 
 <h1>Happy First Valentine My Love ❤️</h1>
 
-<!-- Images -->
-<div class="image-wrapper">
-  <img src="IMG_3043.jpeg" alt="Childhood Memory">
-  <img src="IMG_6203.jpeg" alt="Our Love">
+<!-- Slideshow Images -->
+<div class="slideshow-container">
+  <img src="IMG_3043.jpeg" class="slide active" alt="Childhood Memory">
+  <img src="IMG_6203.jpeg" class="slide" alt="Our Love">
 </div>
 
 <!-- Paragraphs with stickers -->
@@ -181,7 +185,6 @@ html, body {
 const audio = document.getElementById("bgAudio");
 let started = false;
 audio.volume = 0.25;
-
 function startMusic(){
   if(!started){
     audio.play().then(()=> started=true).catch(()=>{});
@@ -230,6 +233,14 @@ function createHeart(){
 }
 setInterval(createHeart, 800);
 
+// Slideshow logic
+let slides = document.querySelectorAll('.slide');
+let current = 0;
+setInterval(() => {
+  slides[current].classList.remove('active');
+  current = (current + 1) % slides.length;
+  slides[current].classList.add('active');
+}, 4000); // change image every 4 seconds
 </script>
 
 </body>
