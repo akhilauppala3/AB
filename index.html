@@ -1,92 +1,119 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Our First Valentine ❤️</title>
- <style>
-    body {
-      height: 200vh; /* allow scrolling */
-      font-family: sans-serif;
-      padding: 50px;
-    }
-    h1 {
-      margin-bottom: 20px;
-    }
-    p {
-      font-size: 2.2rem;
-    }
-  </style>
 <style>
-body {
-  margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
-  color: white;
-  text-align: center;
-  overflow-x: hidden;
-}
+  /* Body and background */
+  body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(to bottom, #fce1f5, #ffe6f0);
+    color: #ff4da6;
+    text-align: center;
+    overflow-x: hidden;
+    padding: 30px;
+  }
 
-h1 {
-  margin-top: 30px;
-  font-size: 2.5em;
-  color: #ff9ed2;
-}
+  h1 {
+    margin-top: 20px;
+    font-size: 2.5em;
+    color: #ff4da6;
+    text-shadow: 1px 1px 5px pink;
+  }
 
-.container {
-  padding: 20px;
-  max-width: 800px;
-  margin: auto;
-}
+  .container {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+  }
 
-.card {
-  background: rgba(255,255,255,0.08);
-  backdrop-filter: blur(10px);
-  padding: 25px;
-  border-radius: 20px;
-  margin-top: 20px;
-  box-shadow: 0 0 25px rgba(255,105,180,0.5);
-}
+  .card {
+    background: rgba(255,255,255,0.2);
+    backdrop-filter: blur(10px);
+    padding: 25px;
+    border-radius: 25px;
+    margin-top: 20px;
+    box-shadow: 0 0 30px rgba(255,105,180,0.5);
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+  }
 
-img {
-  width: 90%;
-  border-radius: 20px;
-  margin-top: 20px;
-  box-shadow: 0 0 20px pink;
-}
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 40px rgba(255,105,180,0.7);
+  }
 
-button {
-  padding: 12px 25px;
-  margin: 10px;
-  border: none;
-  border-radius: 30px;
-  font-size: 1em;
-  cursor: pointer;
-  transition: 0.3s;
-}
+  p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+  }
 
-#yesBtn {
-  background: #ff4da6;
-  color: white;
-}
+  h2 {
+    margin: 20px 0;
+    color: #ff1f91;
+    text-shadow: 1px 1px 5px pink;
+  }
 
-#noBtn {
-  background: #555;
-  color: white;
-  position: relative;
-}
+  /* Slideshow styles */
+  .slideshow-container {
+    position: relative;
+    max-width: 100%;
+    margin: 20px auto;
+    border-radius: 25px;
+    overflow: hidden;
+    box-shadow: 0 0 30px rgba(255,105,180,0.5);
+  }
 
-.heart {
-  position: fixed;
-  bottom: -10px;
-  font-size: 20px;
-  animation: float 6s linear infinite;
-  opacity: 0.6;
-}
+  .slide {
+    display: none;
+    width: 100%;
+    border-radius: 25px;
+  }
 
-@keyframes float {
-  0% { transform: translateY(0); }
-  100% { transform: translateY(-100vh); opacity:0; }
-}
+  .slide img {
+    width: 100%;
+    display: block;
+    border-radius: 25px;
+    transition: opacity 1s ease-in-out;
+  }
+
+  /* Buttons */
+  button {
+    padding: 12px 25px;
+    margin: 10px;
+    border: none;
+    border-radius: 30px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+
+  #yesBtn {
+    background: #ff4da6;
+    color: white;
+  }
+
+  #noBtn {
+    background: #555;
+    color: white;
+    position: relative;
+  }
+
+  /* Subtle floating sparkle animation */
+  .sparkle {
+    position: absolute;
+    font-size: 15px;
+    color: #ffb6ff;
+    animation: sparkleMove 4s linear infinite;
+    opacity: 0.6;
+  }
+
+  @keyframes sparkleMove {
+    0% { transform: translateY(0) scale(0.5); opacity:0.6;}
+    50% { transform: translateY(-50vh) scale(1); opacity:1;}
+    100% { transform: translateY(-100vh) scale(0.5); opacity:0;}
+  }
 </style>
 </head>
 
@@ -96,96 +123,116 @@ button {
 
 <div class="container">
 
-<div class="card">
-<p>
-From childhood memories... 👶  
-to becoming husband & wife... 💍  
-Our story was written by destiny.
-</p>
+  <!-- Slideshow -->
+  <div class="slideshow-container">
+    <div class="slide">
+      <img src="IMG_3043.jpeg" alt="Childhood Memory">
+    </div>
+    <div class="slide">
+      <img src="IMG_6203.jpeg" alt="Our Love">
+    </div>
+  </div>
 
-<img src="IMG_3043.jpeg" alt="Childhood Memory">
+  <div class="card">
+    <p>
+      From childhood memories... 👶  
+      to becoming husband & wife... 💍  
+      Our story was written by destiny.
+    </p>
 
-    <div class="heart">💖</div>
+    <p>
+      This is our <b>first Valentine’s Day after marriage</b>,
+      and I wanted to do something special just for you.
+    </p>
 
-    <div class="card">
-      <p>
-        This is our <b>first Valentine’s Day after marriage</b>,
-        and I wanted to do something special just for you.
-      </p>
+    <p>
+      We’ve known each other since childhood…  
+      grew up as <b>bava & maradalu</b>,  
+      and somehow destiny decided,  
+      <b>“These two belong together.”</b>
+    </p>
 
-      <p>
-        We’ve known each other since childhood…  
-        grew up as <b>bava & maradalu</b>,  
-        and somehow destiny decided,  
-        <b>“These two belong together.”</b>
-      </p>
+    <p>
+      Yes, we fight.  
+      Yes, we get angry.  
+      Yes, we hurt each other sometimes.
+    </p>
 
-      <p>
-        Yes, we fight.  
-        Yes, we get angry.  
-        Yes, we hurt each other sometimes.
-      </p>
+    <p>
+      But even after all that,  
+      <b>I still choose you. Every single day.</b>
+    </p>
 
-      <p>
-        But even after all that,  
-        <b>I still choose you. Every single day.</b>
-      </p>
+    <p>
+      You are my comfort,  
+      my safe place,  
+      my forever person.
+    </p>
 
-      <p>
-        You are my comfort,  
-        my safe place,  
-        my forever person.
-      </p>
+    <p>
+      I may not say it every day,  
+      but please know this:
+    </p>
 
-      <p>
-        I may not say it every day,  
-        but please know this:
-      </p>
+    <h2>❤️ I LOVE YOU ❤️</h2>
 
-      <h2>❤️ I LOVE YOU ❤️</h2>
+    <p>
+      Even after all our fights,  
+      my heart still chooses you.  
+      Today. Tomorrow. Forever.
+    </p>
 
-<img src="IMG_6203.jpeg" alt="Our Love">
+    <h2>Do You Love Me? 😘</h2>
 
-<p>
-Even after all our fights,  
-my heart still chooses you.  
-Today. Tomorrow. Forever.
-</p>
+    <button id="yesBtn" onclick="showLove()">Yes ❤️</button>
+    <button id="noBtn" onmouseover="moveButton()">No 😜</button>
 
-<h2>Do You Love Me? 😘</h2>
+    <p id="message" style="display:none; margin-top:20px; font-size:1.2em; color:#ff4da6;">
+      Forever yours… My Bava 💖🌙
+    </p>
 
-<button id="yesBtn" onclick="showLove()">Yes ❤️</button>
-<button id="noBtn" onmouseover="moveButton()">No 😜</button>
-
-<p id="message" style="display:none; margin-top:20px; font-size:1.2em; color:#ffb6ff;">
-Forever yours… My Bava 💖🌙
-</p>
+  </div>
 
 </div>
 
-</div>
-
-<!-- Telugu Romantic Music -->
+<!-- Romantic Background Music -->
 <audio id="bgAudio" loop>
-  <source src="https://raw.githubusercontent.com/username/repo/main/Love.mp3" type="audio/mpeg">
+  <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
   Your browser does not support the audio element.
 </audio>
 
 <script>
+// Mobile/desktop-friendly autoplay
 const audio = document.getElementById('bgAudio');
-let started = false;
+let musicStarted = false;
 
-// Try autoplay on desktop
-audio.play().catch(e => console.log("Autoplay blocked:", e));
+// Try autoplay desktop
+audio.play().catch(e => console.log("Desktop autoplay blocked:", e));
 
 // Play on first scroll for mobile
 window.addEventListener('scroll', () => {
-  if (!started) {
-    audio.play().then(() => started = true)
-    .catch(err => console.log("Play blocked:", err));
+  if (!musicStarted) {
+    audio.play().then(() => musicStarted = true)
+    .catch(err => console.log("Mobile autoplay blocked:", err));
   }
 });
 
+// Slideshow
+let slideIndex = 0;
+const slides = document.getElementsByClassName("slide");
+
+function showSlides() {
+  for (let i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) { slideIndex = 1; }
+  slides[slideIndex - 1].style.display = "block";
+  setTimeout(showSlides, 5000); // change slide every 5 seconds
+}
+showSlides();
+
+// Button functions
 function showLove() {
   document.getElementById("message").style.display = "block";
 }
@@ -197,16 +244,16 @@ function moveButton() {
   btn.style.left = Math.random() * 80 + "%";
 }
 
-/* Floating hearts */
+// Optional: cute floating sparkles
 setInterval(function(){
-  var heart = document.createElement("div");
-  heart.className = "heart";
-  heart.innerHTML = "💖";
-  heart.style.left = Math.random() * 100 + "vw";
-  heart.style.fontSize = (Math.random() * 20 + 10) + "px";
-  document.body.appendChild(heart);
-  setTimeout(function(){ heart.remove(); },6000);
-},500);
+  var sparkle = document.createElement("div");
+  sparkle.className = "sparkle";
+  sparkle.innerHTML = "✨";
+  sparkle.style.left = Math.random() * 100 + "vw";
+  sparkle.style.fontSize = (Math.random() * 15 + 10) + "px";
+  document.body.appendChild(sparkle);
+  setTimeout(function(){ sparkle.remove(); },4000);
+},400);
 </script>
 
 </body>
